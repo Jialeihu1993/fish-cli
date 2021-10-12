@@ -1,0 +1,25 @@
+{
+  "name": "moo-css-base",
+  "version": "0.9.4",
+  "description": "Moo-CSS Base layer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Hello Moo-CSS~\" && exit 1"
+  },
+  "keywords": [
+    "Moo-CSS",
+    "build",
+    "FE",
+	"css-base",
+    "css",
+    "less",
+    "sass",
+    "stylus"
+  ],
+  "author": "michealwayne",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichealWayne/moo-css.git"
+  }
+}

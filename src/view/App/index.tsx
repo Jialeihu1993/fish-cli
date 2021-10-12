@@ -1,22 +1,20 @@
-import React, { useEffect , memo} from "react";
+import React, { useEffect, memo, useState } from 'react';
 import classNames from 'classnames';
 // css modules既解决了className命名冲突的问题，也解决了样式全局作用污染的问题
 import styles from './index.less';
 
-console.log(styles);
+function App(props) {
+  const [test, setA] = useState('hh');
+  useEffect(() => {
+    let a = test;
+    console.log(a);
+  }, []);
 
-function App (props) {
-
-    useEffect(() => {
-
-    }, [])
- 
-    return (
-        <section>
-            <div className={classNames(styles['title'],'hh')}>11</div>
-        </section>
-    )
-
+  return (
+    <section>
+      <div className={classNames(styles['title'], 'g-mt20 g-ml20')}>移动脚手架</div>
+    </section>
+  );
 }
 
-export default memo(App)
+export default memo(App);

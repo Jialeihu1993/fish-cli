@@ -1,0 +1,9 @@
+# Ignore artifacts:
+node_modules
+dist
+src/packages/
+.vscode
+.prettierignore
+
+# Ignore all HTML files:
+*.html

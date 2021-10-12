@@ -1,0 +1,149 @@
+/*
+ * 方法
+ */
+
+topx(value)
+  return unit(value, px)
+
+// 宽高
+wh($width = 100%, $height)
+  width $width
+  height $height
+
+// 高、行高一致
+hh($height)
+  height $height
+  line-height $height
+
+/* square */
+square($size)
+  width $size
+  height $size
+
+ 
+// 字体大小、行高
+font($size, $line-height)
+  font-size $size
+  line-height $line-height
+
+// 字体大小、颜色
+sc($size, $color)
+  font-size $size
+  color $color
+
+
+/* 多行文字溢出... */
+mulit-ellipsis($maxline)
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $maxline;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+/* 伪元素 */
+pseudo-class()
+  position: relative;
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+  }
+  
+/* 内联块级元素, 兼容IE6 */
+dib()
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+
+/* 固定定位, 兼容IE6 */
+fixed()
+    position: fixed;
+    _position: absolute;
+    *zoom: 1;
+
+/* 浮动, 兼容 IE6 */
+fl()
+    float: left;
+    *display: inline;
+    _display: inline;
+
+fr()
+    float: right;
+    *display: inline;
+    _display: inline;
+
+
+/* 禁止用户选中 */
+no-select()
+  -webkit-user-select none
+      -moz-user-select none
+	   -ms-user-select none
+          user-select none
+
+
+/* 使用DIN字体 */
+font-DIN()
+  font-family: 'DIN', 'DIN-Medium', 'DINAlternate', 'DINCondensed', 'PingFangSC-Regular', 'PingFangSC', 'HeitiSC', 'Helvetica', 'Microsoft Yahei', 'DroidSans', sans-serif;
+
+// top、left
+tl($top, $left)
+  top $top
+  left $left
+
+
+// 背景图片地址和大小
+bis($url)
+  background-image url($url)
+  background-repeat no-repeat
+  background-size 100% 100%
+  background-position 0 0
+  
+/* 模糊 */
+blur($range)
+  -webkit-filter blur($range)
+	 -moz-filter blur($range)
+      -ms-filter blur($range) 
+          filter blur($range)
+
+// 定位上下左右居中
+center()
+  top 50%
+  left 50%
+  -webkit-transform translate(-50%, -50%)
+  transform translate(-50%, -50%)
+
+/* fixed mask */
+fixed-mask()
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+/* 单边 border-radius */
+border-top-radius($radius)
+  border-top-right-radius: $radius;
+  border-top-left-radius: $radius;
+
+
+border-right-radius($radius)
+  border-bottom-right-radius: $radius;
+  border-top-right-radius: $radius;
+
+
+border-bottom-radius($radius)
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+
+
+border-left-radius($radius)
+  border-bottom-left-radius: $radius;
+  border-top-left-radius: $radius;
+
+/* opacity */
+opacity($opacity)
+  opacity: $opacity;
+  /* IE8 filter */
+  $opacity-ie: ($opacity * 100);
+  filter: "alpha(opacity=${opacity-ie})";
