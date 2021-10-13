@@ -2,7 +2,7 @@
  * @Author: hujialei
  * @Date: 2021-09-28 19:17:29
  * @Last Modified by: hujialei
- * @Last Modified time: 2021-10-12 17:51:54
+ * @Last Modified time: 2021-10-13 10:12:21
  */
 
 const glob = require('glob');
@@ -16,12 +16,12 @@ const CONFIGS = require('./configs'),
 
 module.exports = {
   entry: {
-    app: './src/pages/index.tsx'
+    app: './src/pages/Index/index.tsx'
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: '移动端脚手架',
-      template: './src/pages/index.html'
+      template: './src/pages/Index/index.html'
     }),
     new FriendlyErrorsWebpackPlugin()
   ],
