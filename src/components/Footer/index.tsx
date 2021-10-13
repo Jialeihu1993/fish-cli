@@ -1,8 +1,12 @@
 import React, { useEffect, memo, useState, useContext } from 'react';
 import classNames from 'classnames';
 import { useStoreHook } from 'think-react-store';
+interface iProps {
+  lens?: number;
+  fetchNum?: (param: number) => void;
+}
 
-function Footer(props) {
+function Footer({ lens, fetchNum }: iProps) {
   const {
     user: { id, name, setName, setNameAsync }
   } = useStoreHook();
@@ -17,9 +21,12 @@ function Footer(props) {
       name: '异步修改'
     });
   };
+  const handleChange = () => {
+    fetchNum(lens + 1);
+  };
   return (
     <section>
-      <h1>function 类型组件</h1>
+      <h1>function 类型组件{lens}</h1>
       <p>
         用户：name--{name} id--{id}
       </p>
@@ -28,6 +35,9 @@ function Footer(props) {
       </p>
       <p>
         <button onClick={handleNameAsync}>异步修改用户</button>
+      </p>
+      <p>
+        <button onClick={handleChange}>子传父</button>
       </p>
     </section>
   );

@@ -4,18 +4,19 @@ import classNames from 'classnames';
 import styles from './index.less';
 import Footer from '@/components/Footer';
 
-function App(props) {
-  const [test, setA] = useState('hh');
-  useEffect(() => {
-    let a = test;
-    console.log(a);
-  }, []);
+function App() {
+  const [lens, setLens] = useState(10);
+  useEffect(() => {}, []);
 
+  const fetchNum = (param: number) => {
+    console.log('hhhhh' + param);
+    setLens(param);
+  };
   return (
     <section>
       <div className={classNames(styles['title'], 'g-mt20 g-ml20')}>
         <h1>移动脚手架</h1>
-        <Footer></Footer>
+        <Footer lens={lens} fetchNum={fetchNum}></Footer>
       </div>
     </section>
   );
